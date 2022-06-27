@@ -17,7 +17,7 @@ public class TreatmentDAO extends DAOimp<Treatment> {
 
     /**
      * constructs Object. Calls the Constructor from <code>DAOImp</code> to store the connection.
-     * @param conn
+     * @param conn the connectioon
      */
     public TreatmentDAO(Connection conn) {
         super(conn);
@@ -102,7 +102,7 @@ public class TreatmentDAO extends DAOimp<Treatment> {
      * maps a <code>long</code> to a <code>Treatment-List</code>
      * @param pid The patient-ID
      * @return ArrayList with treatments matching the given Patient-ID
-     * @throws SQLException
+     * @throws SQLException thrwos a SQL Exceptiom
      */
     public List<Treatment> readTreatmentsByPid(long pid) throws SQLException {
        Statement st = conn.createStatement();
@@ -112,12 +112,12 @@ public class TreatmentDAO extends DAOimp<Treatment> {
 
     /**
      * deletes a treatment from the DB by a Patient-ID
-     * @param key
-     * @throws SQLException
+     * @param pid the PID
+     * @throws SQLException throws SQL exception
      */
-    public void deleteByPid(long key) throws SQLException {
+    public void deleteByPid(long pid) throws SQLException {
         Statement st = conn.createStatement();
-        st.executeUpdate(String.format("Delete FROM treatment WHERE pid= %d", key));
+        st.executeUpdate(String.format("Delete FROM treatment WHERE pid= %d", pid));
     }
     // endregion
 

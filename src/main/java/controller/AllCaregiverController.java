@@ -12,8 +12,10 @@ import datastorage.DAOFactory;
 import java.sql.SQLException;
 import java.util.List;
 
-public class AllCaregiverController
-{
+/**
+ The <code>AllCaregiverController</code> contains the entire logic of the caregiver view. It determines which data is displayed and how to react to events.
+ */
+public class AllCaregiverController {
     @FXML
     private TableView<Caregiver> tableView;
     @FXML

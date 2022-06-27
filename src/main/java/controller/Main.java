@@ -12,6 +12,9 @@ import javafx.stage.WindowEvent;
 
 import java.io.IOException;
 
+/**
+ * the main class
+ */
 public class Main extends Application {
 
     private Stage primaryStage;
@@ -22,6 +25,9 @@ public class Main extends Application {
         mainWindow();
     }
 
+    /**
+     * The main window
+     */
     public void mainWindow() {
         try {
             FXMLLoader loader = new FXMLLoader(Main.class.getResource("/MainWindowView.fxml"));
@@ -34,6 +40,10 @@ public class Main extends Application {
             this.primaryStage.show();
 
             this.primaryStage.setOnCloseRequest(new EventHandler<WindowEvent>() {
+                /**
+                 * Event handler
+                 * @param e Window event
+                 */
                 @Override
                 public void handle(WindowEvent e) {
                     ConnectionBuilder.closeConnection();
@@ -47,6 +57,10 @@ public class Main extends Application {
         }
     }
 
+    /**
+     * the main method
+     * @param args arguments
+     */
     public static void main(String[] args) {
         launch(args);
     }

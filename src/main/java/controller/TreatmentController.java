@@ -12,6 +12,9 @@ import utils.DateConverter;
 import java.sql.SQLException;
 import java.time.LocalDate;
 
+/**
+ * The treatment controller
+ */
 public class TreatmentController {
     @FXML
     private Label lblPatientName;
@@ -37,6 +40,12 @@ public class TreatmentController {
     private Patient patient;
     private Treatment treatment;
 
+    /**
+     * initializing
+     * @param controller the AlltreatmentController
+     * @param stage the stage
+     * @param treatment the treatment
+     */
     public void initializeController(AllTreatmentController controller, Stage stage, Treatment treatment) {
         this.stage = stage;
         this.controller= controller;
@@ -50,6 +59,9 @@ public class TreatmentController {
         }
     }
 
+    /**
+     * shows the data
+     */
     private void showData(){
         this.lblPatientName.setText(patient.getSurname()+", "+patient.getFirstName());
         this.lblCarelevel.setText(patient.getCareLevel());
@@ -61,6 +73,9 @@ public class TreatmentController {
         this.taRemarks.setText(this.treatment.getRemarks());
     }
 
+    /**
+     * handles the change of data
+     */
     @FXML
     public void handleChange(){
         this.treatment.setDate(this.datepicker.getValue().toString());
@@ -73,6 +88,9 @@ public class TreatmentController {
         stage.close();
     }
 
+    /**
+     * updates data and database
+     */
     private void doUpdate(){
         TreatmentDAO dao = DAOFactory.getDAOFactory().createTreatmentDAO();
         try {
@@ -82,6 +100,9 @@ public class TreatmentController {
         }
     }
 
+    /**
+     * cancel handling
+     */
     @FXML
     public void handleCancel(){
         stage.close();

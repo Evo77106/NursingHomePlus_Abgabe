@@ -1,5 +1,8 @@
 package model;
 
+/**
+ * Caregiver work in a NURSING home.
+ */
 public class Caregiver extends Person
 {
     private long _cid;
@@ -48,6 +51,7 @@ public class Caregiver extends Person
 
     /**
      * Getter for the phone Number
+     * @return the telephone number
      */
     public String getTelephone() {
         return _telephone;

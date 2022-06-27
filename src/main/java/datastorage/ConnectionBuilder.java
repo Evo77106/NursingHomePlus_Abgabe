@@ -4,6 +4,9 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
+/**
+ * The Connection Builder
+ */
 public class ConnectionBuilder {
     private static Connection conn;
 
@@ -22,6 +25,10 @@ public class ConnectionBuilder {
         }
     }
 
+    /**
+     * gets the connection
+     * @return the connection
+     */
     public static Connection getConnection() {
         if (conn == null) {
             new ConnectionBuilder();
@@ -29,6 +36,9 @@ public class ConnectionBuilder {
         return conn;
     }
 
+    /**
+     * closes the connection
+     */
     public static void closeConnection() {
         try {
             if(conn != null){

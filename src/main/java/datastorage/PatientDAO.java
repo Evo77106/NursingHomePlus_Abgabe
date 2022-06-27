@@ -15,7 +15,7 @@ public class PatientDAO extends DAOimp<Patient> {
 
     /**
      * constructs Object. Calls the Constructor from <code>DAOImp</code> to store the connection.
-     * @param conn
+     * @param conn the connection
      */
     public PatientDAO(Connection conn) {
         super(conn);

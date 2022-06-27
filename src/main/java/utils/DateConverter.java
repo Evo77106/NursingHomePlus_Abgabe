@@ -9,7 +9,7 @@ public class DateConverter {
     /**
      * Converts a String into a LocalDate object
      * @param date The String thats representing a date (YYYY-MM-DD).
-     * @return
+     * @return the result LocalDate
      */
     public static LocalDate convertStringToLocalDate(String date) {
         String[] array = date.split("-");
@@ -21,7 +21,7 @@ public class DateConverter {
     /**
      * Converts a String into a LocalTime object
      * @param time The String that's representing a time (HH:mm).
-     * @return
+     * @return the Local Time
      */
     public static LocalTime convertStringToLocalTime(String time) {
         String[] array = time.split(":");

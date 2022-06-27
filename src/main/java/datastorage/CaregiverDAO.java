@@ -6,8 +6,15 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
+/**
+ * Implements the Interface <code>DAOImp</code>. Overrides methods to generate specific treatment-SQL-queries.
+ */
 public class CaregiverDAO extends DAOimp<Caregiver>
 {
+    /**
+     * constructor
+     * @param conn the connection
+     */
     public CaregiverDAO(Connection conn)
     {
         super(conn);
